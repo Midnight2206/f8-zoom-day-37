@@ -1,0 +1,67 @@
+@use "../../../../scss/var" as *;
+@use "../../../../scss/mixin" as *;
+
+.wrapper {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: $header-hight;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: $spacing-lg $spacing-xs;
+  gap: $spacing-xxs;
+  .sidebar-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-xxs;
+    color: $theme-text-color-2;
+    width: 72px;
+    height: 72px;
+    border-radius: $radius-md;
+    &:hover {
+      background-color: $theme-bg-color-2;
+    }
+    &.active {
+      background-color: $theme-bg-color-3;
+    }
+    span {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@include respond-max($breakpoint-md) {
+  .wrapper {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: auto;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 $spacing-lg;
+    border-top: $border-width-thin solid $border-color-light;
+    background-color: $theme-bg-color-1;
+    .sidebar-item {
+      height: 100%;
+      width: auto;
+      border-radius: 0;
+      &:hover {
+        background-color: transparent;
+        svg {
+          color: $primary-color;
+        }
+      }
+      &.active {
+        background-color: transparent;
+        svg {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

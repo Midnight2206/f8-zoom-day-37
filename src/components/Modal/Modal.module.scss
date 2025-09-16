@@ -1,0 +1,59 @@
+@use "../../scss/var" as *;
+@use "../../scss/mixin" as *;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $theme-bg-color-3;
+  z-index: $z-index-modal-backdrop;
+  opacity: 0;
+  visibility: hidden;
+  @include transition(all, $transition-base);
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.closing {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: $theme-bg-color-1;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+  padding: $spacing-lg;
+  max-width: 90%;
+  width: 500px;
+  height: 75%;
+  overflow-y: auto;
+  z-index: $z-index-modal;
+  opacity: 0;
+  @include transition(all, $transition-base);
+
+  &.open {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &.closing {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+
+  @include respond-max($breakpoint-sm) {
+    width: 95%;
+    padding: $spacing-md;
+    border-radius: $radius-md;
+  }
+}

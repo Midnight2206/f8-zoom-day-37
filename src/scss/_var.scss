@@ -1,0 +1,159 @@
+
+/* Colors */
+$primary-color: #f05123;
+$primary-color-hover: #d9481f;
+$black-color: #000;
+$white-color: #fff;
+$gray-color: #666;
+$text-color: #333;
+$plum-color: #b80257;
+$fb-color: #4080ff;
+$mail-color: #f47425;
+$invalid-color: #f33a58;
+$desc-color: #0000008a;
+
+/* Theme Colors */
+$first-color: #1dbfaf;
+$second-color: #f05123;
+$button-color: #1dbfaf;
+
+/* Gradient */
+$button-image: linear-gradient(70.06deg, #2cccff -5%, #22dfbf 106%);
+
+/* Base */
+$white: #ffffff;
+
+/* Background */
+$theme-bg-color-1: #ffffff;
+$theme-bg-color-2: #0000000d; // ~5% opacity
+$theme-bg-color-3: #00000033; // ~20% opacity
+$theme-bg-color-4: #00000080; // ~50% opacity
+$theme-bg-color-5: #000000ff; // 100% đen
+
+/* Border */
+$theme-border-color-1: #e8ebed;
+$theme-border-color-2: #0000000d;
+
+/* Text */
+$theme-text-color-1: #000000;
+$theme-text-color-2: #1a1a1a;
+$theme-text-color-3: #666666;
+$theme-text-color-4: #ffffff;
+
+/* Status Colors */
+$theme-color-info: #3498db;
+$theme-color-success: #07bc0c;
+$theme-color-warning: #f1c40f;
+$theme-color-error: #e74c3c;
+
+/* Toast color */
+$toastify-color-light: #ffffff;
+$toastify-color-dark: #121212;
+$toastify-color-info: #3498db;
+$toastify-color-success: #07bc0c;
+$toastify-color-warning: #f1c40f;
+$toastify-color-error: #e74c3c;
+$toastify-color-transparent: #ffffffb3;
+
+/* Font families */
+$font-primary: "Roboto", sans-serif;     // body, paragraph
+$font-secondary: "Montserrat", sans-serif; // headings, special text
+
+/* Font weights */
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+/* Font sizes (rem, 1rem = 10px) */
+$font-size-xxs: 1.0rem;   // 10px
+$font-size-xs: 1.2rem;    // 12px
+$font-size-sm: 1.4rem;    // 14px
+$font-size-base: 1.6rem;  // 16px
+$font-size-lg: 1.8rem;      // 18px
+$font-size-xl: 2.4rem;    // 24px
+$font-size-2xl: 3.2rem;   // 32px
+$font-size-3xl: 4rem;     // 40px
+$font-size-4xl: 4.8rem;   // 48px
+$font-size-5xl: 6.4rem;   // 64px
+$font-size-6xl: 7.2rem;   // 72px
+
+/*  Line heights */
+$line-height-tight: 1.2;
+$line-height-sm: 1.4;
+$line-height-base: 1.6;
+$line-height-lg: 1.8;
+$line-height-loose: 2.0;
+
+/* Letter spacing */
+$letter-spacing-tight: -0.02em;
+$letter-spacing-normal: 0em;
+$letter-spacing-wide: 0.02em;
+$letter-spacing-wider: 0.05em;
+/* Spacing */
+$spacing-xxs: 0.4rem;  // 4px
+$spacing-xs: 0.8rem;   // 8px
+$spacing-sm: 1.2rem;   // 12px
+$spacing-md: 1.6rem;   // 16px
+$spacing-lg: 2.4rem;   // 24px
+$spacing-xl: 3.2rem;   // 32px
+$spacing-2xl: 4rem;    // 40px
+$spacing-3xl: 4.8rem;  // 48px
+$spacing-4xl: 6.4rem;  // 64px
+$spacing-5xl: 8rem;    // 80px
+// Breakpoint
+$breakpoint-xs: 380px;   // mobile nhỏ
+$breakpoint-sm: 480px;   // mobile
+$breakpoint-md: 780px;   // tablet
+$breakpoint-lg: 1024px;  // laptop nhỏ / desktop
+$breakpoint-xl: 1280px;  // desktop lớn
+$breakpoint-2xl: 1536px; // màn hình rất lớn
+// z-index
+$z-index-auto: auto;
+$z-index-default: 1;    // nội dung mặc định
+$z-index-dropdown: 1000; // dropdown, menu
+$z-index-sticky: 1020;  // header / sticky
+$z-index-fixed: 1030;   // fixed elements
+$z-index-modal-backdrop: 1040; // backdrop của modal
+$z-index-modal: 1050;   // modal
+$z-index-popover: 1060; // tooltip / popover
+$z-index-toast: 1070;   // toast notifications
+$z-index-max: 9999;     // cực đại, overlay đặc biệt
+// Border radius
+$radius-none: 0;        // Không bo góc
+$radius-sm: 0.4rem;     // 4px
+$radius-md: 0.8rem;     // 8px
+$radius-lg: 1.6rem;     // 16px
+$radius-xl: 2.4rem;     // 24px
+$radius-2xl: 3.2rem;    // 32px
+$radius-full: 9999px;   // Bo tròn hoàn toàn (circle)
+// Shadow
+$shadow-sm: 0 0.1rem 0.2rem rgba(0,0,0,0.05);
+$shadow-md: 0 0.4rem 0.6rem rgba(162, 29, 29, 0.1);
+$shadow-lg: 0 1rem 1.5rem rgba(0,0,0,0.15);
+// Opacity
+$opacity-0: 0;
+$opacity-50: 0.5;
+$opacity-70: 0.7;
+$opacity-100: 1;
+// Transition
+$transition-fast: 0.2s ease-in-out;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+// Border
+$border-width-very-thin: 0.05rem;
+$border-width-thin: 0.1rem;
+$border-width-normal: 0.2rem;
+$border-width-thick: 0.4rem;
+$border-color-light: #e8ebed;
+$border-color-dark: #333;
+// Icon
+$icon-size-sm: 1.2rem;
+$icon-size-md: 1.6rem;
+$icon-size-lg: 1.8rem;
+$icon-color-default: $text-color;
+// Box
+$header-hight: 66px;

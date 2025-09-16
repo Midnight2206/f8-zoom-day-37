@@ -1,0 +1,28 @@
+@use "../../scss/var" as *;
+@use "../../scss/mixin" as *;
+.wrapper {
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "sidebar body"
+    "footer footer";
+    grid-template-columns: 96px 1fr;
+    padding: 0 $spacing-lg 0 0;
+}
+.header {
+    grid-area: header;
+}
+.sidebar {
+    grid-area: sidebar;
+}
+.body {
+    grid-area: body;
+    padding: $header-hight $spacing-xl 0 $spacing-sm;
+}
+
+@include respond-max($breakpoint-md) {
+    .wrapper {
+        display: block;
+    }
+    
+}

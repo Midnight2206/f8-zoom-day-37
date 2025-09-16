@@ -1,0 +1,54 @@
+@use "../../scss/var" as *;
+@use "../../scss/mixin" as *;
+
+.wrapper {
+  position: relative;
+}
+
+.popup {
+  position: absolute;
+  width: 400px;
+  padding: $spacing-md;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: $opacity-50;
+  top: calc(100% + $spacing-sm);
+  right: 0;
+  background-color: $white;
+  box-shadow: $shadow-lg;
+  transition: height $transition-fast, visibility $transition-fast,
+    opacity $transition-fast;
+  &.open {
+    visibility: visible;
+    opacity: $opacity-100;
+    height: auto;
+  }
+  li {
+    position: relative;
+    height: 76px;
+    display: block;
+    @include flex-between;
+    cursor: pointer;
+    padding: 8px 12px;
+    gap: $spacing-xs;
+    border-radius: $radius-sm;
+  }
+  section {
+    border-top: $border-width-thin solid $border-color-light;
+  }
+  &.small {
+    width: 240px;
+    li {
+        height: auto;
+        font-size: 1.4rem;
+        padding: 10px;
+        margin-bottom: 4px;
+    }
+  }
+  .popup-list {
+    padding-right: 8px;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+}

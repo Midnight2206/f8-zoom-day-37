@@ -1,0 +1,33 @@
+@use "../../scss/var" as *;
+@use "../../scss/mixin" as *;
+.wrapper {
+    @include flex-center;
+    @include respond-max($breakpoint-xs) {
+        display: none
+    }
+}
+.img-wrapper {
+    width: 38px;
+    height: 38px;
+    border-radius: $radius-md;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.slogan {
+    @include flex-center;
+    font-weight: $font-weight-bold;
+    font-size: inherit;
+    color: inherit;
+    p {
+        white-space: normal;
+    }
+}
+@include respond-max($breakpoint-lg) {
+    .hideOnLgScreen {
+        display: none;
+    }
+}

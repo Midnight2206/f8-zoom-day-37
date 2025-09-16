@@ -1,0 +1,127 @@
+@use "./var" as *;
+@use "./mixin" as *;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $theme-text-color-2;
+  background-color: $theme-bg-color-1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  margin-bottom: $spacing-md;
+  color: $theme-text-color-1;
+}
+
+h1 { font-size: $font-size-4xl; }
+h2 { font-size: $font-size-3xl; }
+h3 { font-size: $font-size-2xl; }
+h4 { font-size: $font-size-xl; }
+h5 { font-size: $font-size-lg; }
+h6 { font-size: $font-size-base; }
+
+/* Paragraphs */
+p {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $theme-text-color-2;
+}
+
+/* Links */
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $second-color;
+  }
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: $radius-sm;
+}
+
+/* Lists */
+ul, ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: $spacing-sm;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: $spacing-sm;
+  text-align: left;
+  border-bottom: $border-width-thin solid $theme-border-color-1;
+}
+
+/* Forms */
+input,
+textarea,
+select {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  padding: $spacing-sm $spacing-md;
+  border: $border-width-normal solid $theme-border-color-2;
+  border-radius: $radius-sm;
+  outline: none;
+  transition: border-color $transition-base;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  &:focus {
+    border-color: $first-color;
+  }
+
+  &:disabled {
+    background-color: $theme-bg-color-2;
+    cursor: not-allowed;
+  }
+}
+@include respond-max($breakpoint-md) {
+  body { font-size: $font-size-sm; }
+  h1 { font-size: $font-size-3xl; }
+  h2 { font-size: $font-size-2xl; }
+  h3 { font-size: $font-size-xl; }
+  p  { font-size: $font-size-sm; }
+}
+
+@include respond-max($breakpoint-sm) {
+  body { font-size: $font-size-xs; }
+  h1 { font-size: $font-size-2xl; }
+  h2 { font-size: $font-size-xl; }
+  h3 { font-size: $font-size-lg; }
+  p  { font-size: $font-size-xs; }
+}

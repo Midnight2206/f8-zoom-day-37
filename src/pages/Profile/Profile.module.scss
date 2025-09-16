@@ -1,0 +1,59 @@
+@use "../../scss/var" as *;
+@use "../../scss/mixin" as *;
+
+.wrapper {
+  padding: $spacing-lg;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: $spacing-lg;
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  .row:first-child {
+    input[type="file"] {
+      display: none;
+    }
+
+    label {
+      width: 160px;
+      height: 160px;
+      border-radius: $radius-full;
+      background-color: $border-color-light;
+      cursor: pointer;
+      display: block;
+      margin-bottom: $spacing-sm;
+      overflow: hidden;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+      color: $theme-text-color-3;
+      font-size: $font-size-sm;
+
+      svg {
+        color: $primary-color;
+      }
+    }
+  }
+
+  
+  @include respond-max($breakpoint-lg) {
+    grid-template-columns: 1fr;
+    .row {
+      width: 100%;
+      @include flex-center
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@use "../../scss/var" as *;
+@use "../../scss/mixin" as *;
+
+.wrapper {
+  padding: $spacing-lg;
+  text-align: center;
+
+  h1 {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); // desktop mặc định
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+
+  button {
+    cursor: pointer;
+    padding: $spacing-sm;
+    border-radius: $radius-md;
+    border: none;
+    outline: none;
+    background-color: $primary-color;
+    &:hover {
+      background-color: $primary-color-hover;
+    }
+  }
+  @include respond-max($breakpoint-md) {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: $spacing-sm;
+  }
+
+  @include respond-max($breakpoint-sm) {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: $spacing-xs;
+  }
+}
+.contentCustom {
+  background-color: aquamarine !important;
+}
+.overlayCustom {
+  background-color: rgb(215, 135, 31) !important;
+}
+:global(body.modal-open-body) {
+  background-color: $theme-color-warning;
+}
+:global(html.modal-open-html) {
+  background-color: $theme-color-success;
+}
