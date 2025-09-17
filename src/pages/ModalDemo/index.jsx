@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import classNames from "classnames/bind";
 import styles from "./ModalDemo.module.scss";
 import Modal from "../../components/Modal";
@@ -9,11 +9,14 @@ function ModalDemo() {
   const [open, setOpen] = useState(null);
   const close = () => setOpen(null);
 
+  // ref để gọi open(), close(), toggle()
+  const modalRef = useRef(null);
+
   return (
     <div className={cx("wrapper")}>
       <h1>Modal Showcase</h1>
 
-      {/* Nút mở modal */}
+      {/* Nút mở modal bằng state (cách cũ) */}
       <div className={cx("buttons")}>
         <button onClick={() => setOpen("default")}>Default Modal</button>
         <button onClick={() => setOpen("timeout")}>Modal with Timeout</button>
@@ -26,11 +29,26 @@ function ModalDemo() {
         <button onClick={() => setOpen("htmlClass")}>Modal with HTML Class</button>
       </div>
 
+      {/* Nhóm button điều khiển bằng ref */}
+      <div className={cx("refControls")}>
+        <h3>Điều khiển qua Ref</h3>
+        <button onClick={() => modalRef.current?.open()}>Open bằng ref</button>
+        <button onClick={() => modalRef.current?.close()}>Close bằng ref</button>
+        <button onClick={() => modalRef.current?.toggle()}>Toggle bằng ref</button>
+      </div>
+
       {/* Default Modal */}
       <Modal isOpen={open === "default"} onRequestClose={close}>
         <h2>Default Modal</h2>
         <p>Đây là modal mặc định.</p>
         <button onClick={close}>Đóng</button>
+      </Modal>
+
+      {/* Modal điều khiển qua Ref */}
+      <Modal ref={modalRef} onRequestClose={() => modalRef.current?.close()}>
+        <h2>Modal controlled by Ref</h2>
+        <p>Modal này được mở/đóng bằng phương thức ref.</p>
+        <button onClick={() => modalRef.current?.close()}>Đóng</button>
       </Modal>
 
       {/* Timeout Modal */}
@@ -108,8 +126,10 @@ function ModalDemo() {
         bodyOpenClassName="modal-open-body"
       >
         <h2>Body Class Modal</h2>
-        <p>Khi mở modal này, thẻ <code>&lt;body&gt;</code> sẽ có class
-           <b> modal-open-body</b>.</p>
+        <p>
+          Khi mở modal này, thẻ <code>&lt;body&gt;</code> sẽ có class
+          <b> modal-open-body</b>.
+        </p>
         <button onClick={close}>Đóng</button>
       </Modal>
 
@@ -120,8 +140,10 @@ function ModalDemo() {
         htmlOpenClassName="modal-open-html"
       >
         <h2>HTML Class Modal</h2>
-        <p>Khi mở modal này, thẻ <code>&lt;html&gt;</code> sẽ có class
-           <b> modal-open-html</b>.</p>
+        <p>
+          Khi mở modal này, thẻ <code>&lt;html&gt;</code> sẽ có class
+          <b> modal-open-html</b>.
+        </p>
         <button onClick={close}>Đóng</button>
       </Modal>
     </div>

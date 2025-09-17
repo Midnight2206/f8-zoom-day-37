@@ -1,0 +1,130 @@
+.wrapper {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.input-value {
+  display: block;
+  padding: 10px 14px;
+  background: #f1f3f6;
+  border-left: 4px solid #007bff;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+}
+
+.action {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+
+  button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #fff;
+
+    &:nth-child(1) {
+      background: #007bff;
+
+      &:hover {
+        background: #0056b3;
+      }
+    }
+
+    &:nth-child(2) {
+      background: #6c757d;
+
+      &:hover {
+        background: #565e64;
+      }
+    }
+
+    &:nth-child(3) {
+      background: #28a745;
+
+      &:hover {
+        background: #218838;
+      }
+    }
+
+    &:active {
+      transform: scale(0.96);
+    }
+  }
+}
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .input-group {
+    flex: 2;
+  }
+
+  .actions {
+    flex: 1;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .action {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
+}

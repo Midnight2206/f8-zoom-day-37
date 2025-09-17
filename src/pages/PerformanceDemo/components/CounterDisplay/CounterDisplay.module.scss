@@ -1,0 +1,13 @@
+@use "../../../../scss/var" as *;
+@use "../../../../scss/mixin" as *;
+
+
+
+    .counter {
+        @include flex-center;
+        width: 150px;
+        height: 150px;
+        background-color: $theme-color-success;
+        font-size: $font-size-6xl;
+    }
+    

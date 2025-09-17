@@ -9,13 +9,14 @@
   position: absolute;
   width: 400px;
   padding: $spacing-md;
+  z-index: $z-index-dropdown;
   height: 0;
   overflow: hidden;
   visibility: hidden;
   opacity: $opacity-50;
   top: calc(100% + $spacing-sm);
   right: 0;
-  background-color: $white;
+  background-color: $white-color;
   box-shadow: $shadow-lg;
   transition: height $transition-fast, visibility $transition-fast,
     opacity $transition-fast;

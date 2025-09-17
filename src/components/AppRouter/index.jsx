@@ -4,14 +4,19 @@ import Home from "../../pages/Home";
 import ModalDemo from "../../pages/ModalDemo";
 import Blog from "../../pages/Blog";
 import Profile from "../../pages/Profile";
+import PerformanceDemo from "../../pages/PerformanceDemo";
+import FocusDemo from "../../pages/FocusDemo";
 function AppRouter() {
     return (
         <Routes>
-            <Route index>
+            <Route path="/">
                 <Route element={<DefaultLayout />}>
                     <Route index element={<Home />}/>
-                    <Route path="/modal-demo" element={<ModalDemo />}/>
-                    <Route path="/blog" element={<Blog />}/>
+                    <Route path="modal-demo" element={<ModalDemo />}/>
+                    <Route path="blog" element={<Blog />}/>
+                    <Route path="performance-demo" element={<PerformanceDemo />}/>
+                    <Route path="focus-demo" element={<FocusDemo />}/>
+
                 </Route>
             </Route>
             <Route path="me">

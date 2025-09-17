@@ -4,6 +4,7 @@
 .wrapper {
   padding: $spacing-lg;
   text-align: center;
+  position: relative;
 
   h1 {
     margin-bottom: $spacing-lg;
@@ -12,24 +13,28 @@
 
 .buttons {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(200px, 1fr)
-  ); // desktop mặc định
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: $spacing-md;
   margin-bottom: $spacing-xl;
 
   button {
     cursor: pointer;
-    padding: $spacing-sm;
+    padding: $spacing-sm $spacing-md;
     border-radius: $radius-md;
     border: none;
     outline: none;
+    font-weight: 500;
+    color: #fff;
     background-color: $primary-color;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.25s ease;
+
     &:hover {
       background-color: $primary-color-hover;
+      transform: translateY(-2px);
     }
   }
+
   @include respond-max($breakpoint-md) {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: $spacing-sm;
@@ -40,12 +45,39 @@
     gap: $spacing-xs;
   }
 }
+
+.refControls {
+  position: fixed;
+  bottom: $spacing-lg;
+  right: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  z-index: 99999;
+
+  button {
+    background-color: $primary-color;
+    color: #fff;
+    font-size: 14px;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    &:hover {
+      background-color: $primary-color-hover;
+      transform: translateY(-2px);
+    }
+  }
+}
+
 .contentCustom {
   background-color: aquamarine !important;
 }
 .overlayCustom {
   background-color: rgb(215, 135, 31) !important;
 }
+
 :global(body.modal-open-body) {
   background-color: $theme-color-warning;
 }

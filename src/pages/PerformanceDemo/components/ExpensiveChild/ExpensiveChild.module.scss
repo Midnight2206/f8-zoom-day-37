@@ -1,0 +1,34 @@
+@use "../../../../scss/var" as *;
+@use "../../../../scss/mixin" as *;
+
+
+.wrapper {
+    position: relative;
+    height: 400px;
+    overflow-y: hidden;
+    background-color: $theme-bg-color-3;
+    border-radius: $radius-lg;
+    padding: $spacing-md;
+}
+.items {
+    height: 320px;
+    overflow-y: auto;
+}
+.add-btn {
+    position: absolute;
+    bottom: $spacing-md;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: $spacing-sm $spacing-lg;
+    background-color: $plum-color;
+    color: $white;
+    font-weight: $font-weight-bold;
+    outline: none;
+    border: 1px solid $plum-color;
+    border-radius: $radius-md;
+    cursor: pointer;
+    &:hover {
+        background-color: $white;
+        color: $plum-color;
+    }
+}

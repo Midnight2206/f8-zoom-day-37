@@ -2,7 +2,7 @@ import classNames from "classnames/bind";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faCrown } from "@fortawesome/free-solid-svg-icons";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 import styles from "./Header.module.scss";
 import Slogan from "../../../../components/Slogan";
@@ -12,6 +12,7 @@ import Popup from "../../../../components/Popup";
 const cx = classNames.bind(styles);
 
 function Header({ className }) {
+  const navigate = useNavigate()
   const result = [
     {
       type: "Khóa học",
@@ -286,7 +287,7 @@ function Header({ className }) {
           items={
             <>
                 <section className={cx("popup-section")}>
-                    <li className={cx("popup-item")}><Link to="me/profile">Trang cá nhân</Link></li>
+                    <li className={cx("popup-item")} onClick={() => navigate("/me/profile")}>Trang cá nhân</li>
                 </section>
                 <section className={cx("popup-section")}>
                     <li className={cx("popup-item")}>Viết blog</li>

@@ -1,0 +1,19 @@
+@use "../../scss/var" as *;
+@use "../../scss/mixin" as *;
+.wrapper {
+    padding: $spacing-lg;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-md
+}
+
+.counter {
+    @include flex-center;
+    flex-direction: column;
+    gap: $spacing-md;
+    height: 400px;
+    border-radius: $radius-lg;
+    background-color: $theme-bg-color-3;
+    padding: $spacing-md;
+  
+}
