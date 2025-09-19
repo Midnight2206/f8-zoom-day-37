@@ -18,6 +18,7 @@
 .body {
     grid-area: body;
     padding: $header-hight $spacing-xl 0 $spacing-sm;
+    min-height: 80vh;
 }
 
 @include respond-max($breakpoint-md) {

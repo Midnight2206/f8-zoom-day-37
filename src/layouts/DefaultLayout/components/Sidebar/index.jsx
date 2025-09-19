@@ -14,9 +14,9 @@ function Sidebar({className}) {
                 <FontAwesomeIcon icon={faHome} size="lg"/>
                 <span>Trang chủ</span>
             </NavLink>
-            <NavLink to="/learning-paths" className={({isActive}) => cx("sidebar-item", {active: isActive})}>
+            <NavLink to="/users" className={({isActive}) => cx("sidebar-item", {active: isActive})}>
                 <FontAwesomeIcon icon={faRoad} size="lg"/>
-                <span>Lộ trình</span>
+                <span>Users</span>
             </NavLink>
             <NavLink to="/blog" className={({isActive}) => cx("sidebar-item", {active: isActive})}>
                 <FontAwesomeIcon icon={faNewspaper} size="lg"/>

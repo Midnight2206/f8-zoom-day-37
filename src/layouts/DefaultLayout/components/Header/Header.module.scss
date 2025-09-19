@@ -13,6 +13,7 @@
   height: $header-hight;
   border-bottom: $border-width-thin solid $border-color-light;
   background-color: $theme-bg-color-1;
+  z-index: $z-index-sticky;
 }
 
 .action {

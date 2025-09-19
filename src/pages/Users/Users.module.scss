@@ -1,0 +1,51 @@
+@use "../../scss/var" as *;
+@use "../../scss/mixin" as *;
+
+.wrapper {
+  width: 100%;
+  padding: $spacing-md;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $spacing-md;
+  background: $theme-bg-color-2;
+}
+
+.user-card {
+  background: $theme-bg-color-1;
+  padding: $spacing-md;
+  border-radius: $spacing-md;
+  box-shadow: $shadow-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  font-size: $font-size-base;
+  color: $text-color;
+  transition: transform $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-md;
+  }
+
+  span {
+    line-height: 1.5;
+
+    b {
+      color: $text-color;
+      font-weight: 600;
+    }
+  }
+}
+
+/* Responsive */
+@include respond-max($breakpoint-md) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    padding: $spacing-sm;
+  }
+
+  .user-card {
+    padding: $spacing-sm;
+    font-size: $font-size-sm;
+  }
+}

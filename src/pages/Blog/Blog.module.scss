@@ -1,0 +1,120 @@
+@use "../../scss/var" as *;
+@use "../../scss/mixin" as *;
+
+.wrapper {
+  width: 100%;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  background: $theme-bg-color-2;
+  gap: $spacing-md;
+}
+.btns {
+  @include flex-center;
+  gap: $spacing-md;
+}
+.btn {
+  align-self: flex-start;
+  padding: 8px 16px;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  background: $primary-color;
+  color: #fff;
+  cursor: pointer;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: $primary-color-hover;
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $spacing-md;
+  width: 100%;
+}
+
+.post-card {
+  background: $theme-bg-color-1;
+  padding: $spacing-md;
+  border-radius: $radius-md;
+  box-shadow: $shadow-md;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+.post-title {
+  font-size: $font-size-lg;
+  font-weight: 600;
+  color: $text-color;
+  margin-bottom: $spacing-sm;
+  line-height: 1.4;
+}
+
+.post-content {
+  font-size: $font-size-base;
+  color: $text-color;
+  margin-bottom: $spacing-md;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.action {
+  @include flex-between;
+  margin-top: auto;
+
+  span {
+    font-size: $font-size-sm;
+    color: $text-color;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: $font-size-sm;
+    border: none;
+    border-radius: $radius-sm;
+    background: $primary-color;
+    color: #fff;
+    cursor: pointer;
+    transition: background $transition-fast;
+
+    &:hover {
+      background: $primary-color-hover;
+    }
+  }
+}
+
+@include respond-max($breakpoint-md) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .post-card {
+    padding: $spacing-sm;
+  }
+
+  .post-title {
+    font-size: $font-size-base;
+  }
+
+  .post-content {
+    font-size: $font-size-sm;
+  }
+}

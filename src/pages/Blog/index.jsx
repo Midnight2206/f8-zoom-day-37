@@ -2,138 +2,46 @@ import classNames from "classnames/bind";
 
 import GoToTop from "../../components/GoToTop";
 import styles from "./Blog.module.scss";
-
+import DataFetcher from "../../components/DataFetcher";
+import useToggle from "../../hooks/useToggle";
 const cx = classNames.bind(styles);
 
 function Blog() {
+  const [hideBody, toggleHideBody, setHideBody] = useToggle(false)
   return (
     <div className={cx("wrapper")}>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-        quidem ipsam illum sequi quam animi, eos molestiae ipsum vitae. Eveniet
-        asperiores hic nesciunt, beatae voluptas autem. Sunt eos expedita
-        laudantium?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est debitis
-        molestias magni molestiae blanditiis illum possimus doloribus, quo
-        perspiciatis saepe soluta placeat, aliquid officiis fuga cumque quae
-        impedit numquam deserunt!
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat quaerat
-        dolores, voluptas id at soluta odit harum, neque adipisci, dicta
-        assumenda libero ut quibusdam deleniti quis quidem excepturi numquam
-        unde.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-        quidem ipsam illum sequi quam animi, eos molestiae ipsum vitae. Eveniet
-        asperiores hic nesciunt, beatae voluptas autem. Sunt eos expedita
-        laudantium?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est debitis
-        molestias magni molestiae blanditiis illum possimus doloribus, quo
-        perspiciatis saepe soluta placeat, aliquid officiis fuga cumque quae
-        impedit numquam deserunt!
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat quaerat
-        dolores, voluptas id at soluta odit harum, neque adipisci, dicta
-        assumenda libero ut quibusdam deleniti quis quidem excepturi numquam
-        unde.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-        quidem ipsam illum sequi quam animi, eos molestiae ipsum vitae. Eveniet
-        asperiores hic nesciunt, beatae voluptas autem. Sunt eos expedita
-        laudantium?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est debitis
-        molestias magni molestiae blanditiis illum possimus doloribus, quo
-        perspiciatis saepe soluta placeat, aliquid officiis fuga cumque quae
-        impedit numquam deserunt!
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat quaerat
-        dolores, voluptas id at soluta odit harum, neque adipisci, dicta
-        assumenda libero ut quibusdam deleniti quis quidem excepturi numquam
-        unde.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-        quidem ipsam illum sequi quam animi, eos molestiae ipsum vitae. Eveniet
-        asperiores hic nesciunt, beatae voluptas autem. Sunt eos expedita
-        laudantium?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est debitis
-        molestias magni molestiae blanditiis illum possimus doloribus, quo
-        perspiciatis saepe soluta placeat, aliquid officiis fuga cumque quae
-        impedit numquam deserunt!
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat quaerat
-        dolores, voluptas id at soluta odit harum, neque adipisci, dicta
-        assumenda libero ut quibusdam deleniti quis quidem excepturi numquam
-        unde.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-        quidem ipsam illum sequi quam animi, eos molestiae ipsum vitae. Eveniet
-        asperiores hic nesciunt, beatae voluptas autem. Sunt eos expedita
-        laudantium?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est debitis
-        molestias magni molestiae blanditiis illum possimus doloribus, quo
-        perspiciatis saepe soluta placeat, aliquid officiis fuga cumque quae
-        impedit numquam deserunt!
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat quaerat
-        dolores, voluptas id at soluta odit harum, neque adipisci, dicta
-        assumenda libero ut quibusdam deleniti quis quidem excepturi numquam
-        unde.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-        quidem ipsam illum sequi quam animi, eos molestiae ipsum vitae. Eveniet
-        asperiores hic nesciunt, beatae voluptas autem. Sunt eos expedita
-        laudantium?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est debitis
-        molestias magni molestiae blanditiis illum possimus doloribus, quo
-        perspiciatis saepe soluta placeat, aliquid officiis fuga cumque quae
-        impedit numquam deserunt!
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat quaerat
-        dolores, voluptas id at soluta odit harum, neque adipisci, dicta
-        assumenda libero ut quibusdam deleniti quis quidem excepturi numquam
-        unde.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-        quidem ipsam illum sequi quam animi, eos molestiae ipsum vitae. Eveniet
-        asperiores hic nesciunt, beatae voluptas autem. Sunt eos expedita
-        laudantium?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est debitis
-        molestias magni molestiae blanditiis illum possimus doloribus, quo
-        perspiciatis saepe soluta placeat, aliquid officiis fuga cumque quae
-        impedit numquam deserunt!
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat quaerat
-        dolores, voluptas id at soluta odit harum, neque adipisci, dicta
-        assumenda libero ut quibusdam deleniti quis quidem excepturi numquam
-        unde.
-      </p>
+      <DataFetcher url="https://jsonplaceholder.typicode.com/posts?_limit=20">
+        {({ data, loading, error, refetch }) => {
+          if (loading) return <span>Loading...</span>;
+          if (error) return <span>Lỗi</span>;
+          if (!data.length) return <span>Không có dữ liệu</span>;
+
+          return (
+            <>
+              <div className={cx("btns")}>
+                <button onClick={refetch} className={cx("btn")}>
+                  Refresh
+                </button>
+                <button className={cx("btn")} onClick={toggleHideBody}>{hideBody ? "Show body" : "Hide body"}</button>
+                <button className={cx("btn")} onClick={() => setHideBody(true)}>Force hide body</button>
+              </div>
+              {data.map((dt) => (
+                <div key={dt.id} className={cx("post-card")}>
+                  <h6 className={cx("post-title")}>
+                    {dt.id}. {dt.title}
+                  </h6>
+                  {!hideBody && <span className={cx("post-content")}>{dt.body}</span>}
+                  <div className={cx("action")}>
+                    <span>#UserID: {dt.userId}</span>
+                    <button>Xem chi tiết</button>
+                  </div>
+                </div>
+              ))}
+            </>
+          );
+        }}
+      </DataFetcher>
+
       <GoToTop />
     </div>
   );

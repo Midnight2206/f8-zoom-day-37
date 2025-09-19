@@ -6,6 +6,7 @@ import Blog from "../../pages/Blog";
 import Profile from "../../pages/Profile";
 import PerformanceDemo from "../../pages/PerformanceDemo";
 import FocusDemo from "../../pages/FocusDemo";
+import Users from "../../pages/Users";
 function AppRouter() {
     return (
         <Routes>
@@ -16,7 +17,7 @@ function AppRouter() {
                     <Route path="blog" element={<Blog />}/>
                     <Route path="performance-demo" element={<PerformanceDemo />}/>
                     <Route path="focus-demo" element={<FocusDemo />}/>
-
+                    <Route path="users" element={<Users />} />
                 </Route>
             </Route>
             <Route path="me">

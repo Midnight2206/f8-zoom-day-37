@@ -1,16 +1,58 @@
 import { useState, useEffect } from "react";
 import classNames from "classnames/bind";
-import styles from "./Profile.module.scss";
-
-const cx = classNames.bind(styles);
-import avataDefault from "/avata-default.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faUsers, faUserClock} from "@fortawesome/free-solid-svg-icons"
 
-function Profile() {
-  const [avatar, setAvatar] = useState(avataDefault);
-  const [file, setFile] = useState(null);
+import styles from "./Profile.module.scss";
+import avataDefault from "/avata-default.jpg"
+import withLoading from "../../hoc/withLoading";
+import CoursesList from "../../components/CoursesList";
 
+const cx = classNames.bind(styles);
+const Avata = ({src, alt, className}) => {
+  return <img
+            src={src}
+            alt={alt}
+            className={className}
+          />
+}
+const AvataWithLoading = withLoading(Avata)
+function Profile() {
+  const [avatar, setAvatar] = useState(null);
+  const [file, setFile] = useState(null);
+  const [courses, setCourses] = useState(null)
+  useEffect(() => {
+  const timer = setTimeout(() => {
+    setAvatar(avataDefault)
+    setCourses([
+    {
+      id: 1,
+    title: "Javascripts",
+    decs: "Khóa học đầy đủ về JS giúp bạn có đầy đủ kiến thức từ cơ bản đến nâng cao về JS",
+    src_img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHnJDLOcdm_0b6N6kNj-1OvO9KhKYgqIy0w&s"
+    },
+    {
+      id: 2,
+    title: "Javascripts",
+    decs: "Khóa học đầy đủ về JS giúp bạn có đầy đủ kiến thức từ cơ bản đến nâng cao về JS",
+    src_img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHnJDLOcdm_0b6N6kNj-1OvO9KhKYgqIy0w&s"
+    },
+    {
+      id: 3,
+    title: "Javascripts",
+    decs: "Khóa học đầy đủ về JS giúp bạn có đầy đủ kiến thức từ cơ bản đến nâng cao về JS",
+    src_img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHnJDLOcdm_0b6N6kNj-1OvO9KhKYgqIy0w&s"
+    },
+    {
+      id: 4,
+    title: "Javascripts",
+    decs: "Khóa học đầy đủ về JS giúp bạn có đầy đủ kiến thức từ cơ bản đến nâng cao về JS",
+    src_img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHnJDLOcdm_0b6N6kNj-1OvO9KhKYgqIy0w&s"
+    }
+    ])
+  }, 2000);
+  return () => clearTimeout(timer);
+}, []);
   useEffect(() => {
     return () => {
       if (file) {
@@ -41,11 +83,7 @@ function Profile() {
           onChange={handleChange}
         />
         <label htmlFor="avatar">
-          <img
-            src={avatar}
-            alt="avatar"
-            className={cx("avatar-preview")}
-          />
+          <AvataWithLoading isLoading={!avatar} src={avatar} alt="avatar" className={cx("avatar-preview")}/>
         </label>
         <h3>Trần Văn Khánh</h3>
         <span>
@@ -59,6 +97,7 @@ function Profile() {
       </div>
 
       <div className={cx("row")}>
+        <CoursesList isLoading={!courses} data={courses}/>
       </div>
     </div>
   );
