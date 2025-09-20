@@ -1,0 +1,165 @@
+@use "../../scss/var" as *;
+
+.wrapper {
+  font-family: $font-primary;
+  color: $theme-text-color-1;
+  background: $theme-bg-color-1;
+  padding: $spacing-2xl;
+  min-height: 100vh;
+  line-height: $line-height-base;
+
+  h1 {
+    font-family: $font-secondary;
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-xl;
+    color: $first-color;
+    text-align: center;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-md;
+  margin-bottom: $spacing-2xl;
+
+  .menu-item {
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    background: $primary-color;
+    color: $white-color;
+    border: none;
+    border-radius: $radius-md;
+    cursor: pointer;
+    transition: background $transition-base, transform $transition-fast;
+    box-shadow: $shadow-sm;
+
+    &:hover {
+      background: $primary-color-hover;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.notes {
+  max-width: 800px;
+  margin: 0 auto $spacing-3xl auto;
+  padding: $spacing-lg;
+  background: $theme-bg-color-2;
+  border: $border-width-thin solid $theme-border-color-1;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+
+  h6 {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-md;
+    color: $plum-color;
+  }
+
+  p {
+    font-size: $font-size-base;
+    margin-bottom: $spacing-xs;
+    line-height: $line-height-sm;
+
+    b {
+      color: $second-color;
+    }
+
+    code {
+      font-family: monospace;
+      background: $theme-bg-color-2;
+      padding: 0 $spacing-xxs;
+      border-radius: $radius-sm;
+    }
+  }
+}
+
+.form-demo {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: $spacing-2xl;
+  background: $white-color;
+  border: $border-width-thin solid $theme-border-color-1;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+
+  h1 {
+    font-family: $font-secondary;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-lg;
+    color: $second-color;
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+
+    input {
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-base;
+      border: $border-width-thin solid $theme-border-color-1;
+      border-radius: $radius-md;
+      transition: border $transition-fast, box-shadow $transition-fast;
+
+      &:focus {
+        outline: none;
+        border-color: $first-color;
+        box-shadow: 0 0 0 3px rgba($first-color, 0.2);
+      }
+    }
+
+    button {
+      padding: $spacing-sm $spacing-lg;
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      color: $white-color;
+      background: $button-image;
+      border: none;
+      border-radius: $radius-md;
+      cursor: pointer;
+      transition: transform $transition-fast, opacity $transition-fast;
+      box-shadow: $shadow-sm;
+
+      &:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    p {
+      font-size: $font-size-sm;
+      color: $theme-text-color-3;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .wrapper {
+    padding: $spacing-md;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-demo {
+    padding: $spacing-lg;
+  }
+}
